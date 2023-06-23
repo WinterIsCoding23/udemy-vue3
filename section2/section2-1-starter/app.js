@@ -6,6 +6,11 @@ Vue.createApp({
       lastName: "Doe",
     };
   },
+  methods: {
+    fullName() {
+      return `${this.firstName} ${this.lastName.toUpperCase()}`;
+    },
+  },
 }).mount("#app");
 
 // Instance 2:
