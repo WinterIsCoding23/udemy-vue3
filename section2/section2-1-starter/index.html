@@ -5,9 +5,14 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
   <body>
-    <div id="app">
+    <div id="app" v-cloak>
       <!-- <p>Hey</p> -->
-      {{ fullName() }}
+      <p>{{ fullName() }}</p>
+      <hr />
+      <label>First name</label>
+      <input type="text" v-model="firstName" />
+      <label>Last name</label>
+      <input type="text" v-model="lastName" />
     </div>
     <!-- <div id="app2">
       {{ firstName }} {{ lastName }}

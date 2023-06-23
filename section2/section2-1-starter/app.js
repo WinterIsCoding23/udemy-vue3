@@ -1,5 +1,5 @@
 // Instance 1:
-Vue.createApp({
+const vm = Vue.createApp({
   data() {
     return {
       firstName: "John",
