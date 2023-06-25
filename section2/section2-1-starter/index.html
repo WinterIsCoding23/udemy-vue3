@@ -11,12 +11,14 @@
       <a :href="url" target="_blank">Google</a>
       <p>{{ age }}</p>
       <button type="button" @click="increment">Increment</button>
-      <button type="button" v-on:click="age--">Decrement</button>
+      <button type="button" v-on:click.ctrl="age--">Decrement</button>
 
       <hr />
 
       <label>First name</label>
       <input type="text" v-model="firstName" />
+      <label>Middle name</label>
+      <input type="text" @keyup.enter="updateMiddleName" />
       <label>Last name</label>
       <input
         type="text"

@@ -3,6 +3,7 @@ const vm = Vue.createApp({
   data() {
     return {
       firstName: "John",
+      middleName: "",
       lastName: "Doe",
       url: "https://www.google.com/",
       age: 20,
@@ -10,7 +11,9 @@ const vm = Vue.createApp({
   },
   methods: {
     fullName() {
-      return `${this.firstName} ${this.lastName.toUpperCase()}`;
+      return `${this.firstName} ${
+        this.middleName
+      } ${this.lastName.toUpperCase()}`;
     },
     increment() {
       this.age++;
@@ -21,6 +24,9 @@ const vm = Vue.createApp({
       // event.preventDefault();
       console.log(msg);
       this.lastName = event.target.value;
+    },
+    updateMiddleName(event) {
+      this.middleName = event.target.value;
     },
   },
 }).mount("#app");
