@@ -16,7 +16,9 @@ const vm = Vue.createApp({
       this.age++;
     },
     updateLastName(event, msg) {
-      event.preventDefault();
+      // event.preventDefault() can be omitted when using the
+      // ...event-modifier ".prevent" in the HTML:
+      // event.preventDefault();
       console.log(msg);
       this.lastName = event.target.value;
     },

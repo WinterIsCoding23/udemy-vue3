@@ -21,7 +21,7 @@
       <input
         type="text"
         :value="lastName"
-        @input="updateLastName($event,'Event triggered')"
+        @input.prevent="updateLastName($event,'Event triggered')"
       />
     </div>
     <!-- <div id="app2">
