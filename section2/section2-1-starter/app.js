@@ -36,6 +36,13 @@ const vm = Vue.createApp({
       ${this.firstName} ${this.middleName} ${this.lastName.toUpperCase()}`;
     },
   },
+  watch: {
+    age(oldValue, newValue) {
+      setTimeout(() => {
+        this.age = 20;
+      }, 3000);
+    },
+  },
 }).mount("#app");
 
 // Instance 2:
