@@ -18,7 +18,11 @@
       <label>First name</label>
       <input type="text" v-model="firstName" />
       <label>Last name</label>
-      <input type="text" :value="lastName" @input="updateLastName" />
+      <input
+        type="text"
+        :value="lastName"
+        @input="updateLastName($event,'Event triggered')"
+      />
     </div>
     <!-- <div id="app2">
       {{ firstName }} {{ lastName }}
