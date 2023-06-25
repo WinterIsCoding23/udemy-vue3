@@ -10,11 +10,11 @@ const vm = Vue.createApp({
     };
   },
   methods: {
-    fullName() {
-      return `${this.firstName} ${
-        this.middleName
-      } ${this.lastName.toUpperCase()}`;
-    },
+    // fullName() gets moved into the computed-property in section2-25:
+    // fullName() {
+    //   return `
+    //   ${this.firstName} ${this.middleName} ${this.lastName.toUpperCase()}`;
+    // },
     increment() {
       this.age++;
     },
@@ -27,6 +27,13 @@ const vm = Vue.createApp({
     },
     updateMiddleName(event) {
       this.middleName = event.target.value;
+    },
+  },
+  computed: {
+    fullName() {
+      console.log("fullName-function was called");
+      return `
+      ${this.firstName} ${this.middleName} ${this.lastName.toUpperCase()}`;
     },
   },
 }).mount("#app");
