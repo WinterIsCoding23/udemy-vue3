@@ -5,9 +5,34 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
   <body>
-    <div id="app">
-      <p>Hey</p>
+    <div id="app" v-cloak>
+      <!-- <p>Hey</p> -->
+      <p>{{ fullName }}</p>
+      <a :href="url" target="_blank">Google</a>
+      <p>{{ age }}</p>
+
+      <hr />
+
+      <label>First name</label>
+      <input type="text" v-model.lazy.trim="firstName" />
+      <label>Middle name</label>
+      <input type="text" @keyup.enter="updateMiddleName" />
+      <label>Last name</label>
+      <input
+        type="text"
+        :value="lastName"
+        @input.prevent="updateLastName($event,'Event triggered')"
+      />
+
+      <label>Age</label>
+      <input type="number" v-model.number="age" />
+
+      <button type="button" @click="increment">Increment</button>
+      <button type="button" v-on:click.ctrl="age--">Decrement</button>
     </div>
+    <!-- <div id="app2">
+      {{ firstName }} {{ lastName }}
+    </div> -->
 
     <script src="https://unpkg.com/vue@3"></script>
     <script src="app.js"></script>
