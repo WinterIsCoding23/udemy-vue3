@@ -1,4 +1,7 @@
-<template><greeting></greeting></template>
+<template>
+  <p>Hey!</p>
+  <greeting></greeting>
+</template>
 
 <script>
 import Greeting from "@/Components/Greeting.vue";
