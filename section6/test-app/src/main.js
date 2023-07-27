@@ -1,5 +1,9 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+// import Greeting from "@/Components/Greeting.vue";
 
-createApp(App).mount('#app')
+let vm = createApp(App);
+
+// vm.component("Greeting", Greeting);
+
+vm.mount("#app");
