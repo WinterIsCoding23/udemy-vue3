@@ -1,5 +1,8 @@
 <template>
   <h3>Hey!</h3>
+
+  <button type="button" @click="age++">Update age</button>
+
   <!-- Components can be inserted with lower-case or Upper-case -->
   <greeting :age="age"></greeting>
   <!-- if written like <user age="age"></user> </user>-> Vue would assume a String has to be passed down -->

@@ -21,4 +21,7 @@ export default {
 p:hover {
   color: darken(#cc4444, 15%);
 }
+p {
+  color: red;
+}
 </style>
