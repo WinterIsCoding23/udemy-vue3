@@ -1,7 +1,7 @@
 <template>
-  <p>The user is x years old.</p>
+  <p>The user is {{ age }} years old.</p>
 </template>
 
 <script>
-export default { name: "User" };
+export default { name: "User", props: ["age"] };
 </script>
