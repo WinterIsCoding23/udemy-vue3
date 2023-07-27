@@ -13,8 +13,10 @@ export default {
 };
 </script>
 
-<style scoped>
-p {
-  color: red;
+<!-- scss -> SASS -->
+<!-- lighten/darken are SASS-functions -->
+<style scoped lang="scss">
+p:hover {
+  color: darken(#cc4444, 15%);
 }
 </style>
