@@ -1,13 +1,6 @@
 <template>
-  <form>
-    <div class="help"><p>This is some help-text.</p></div>
-    <div class="fields">
-      <input type="text" placeholder="email" />
-      <input type="text" placeholder="username" />
-      <input type="password" placeholder="password" />
-    </div>
-    <div class="buttons">
-      <button type="submit">Submit</button>
-    </div>
-  </form>
+  <!-- <slot></slot> will be replaced by the "markup" inside the <template></template> of the -->
+  <!-- ...component that is rendering the component with the slot -->
+  <!-- anything between the 2 slot-tags will be rendered as default in case no "markup" is present in the other component -->
+  <form><slot>No form to render</slot></form>
 </template>
