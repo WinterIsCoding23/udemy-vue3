@@ -16,6 +16,8 @@ export default {
       // ...when there is a default-value, then "required" is unnecessary
       // default: 20,
       validator(value) {
+        // validator runs before data, computed etc. --> onClickAge() is undefined
+        // this.onClickAge();
         return value < 130;
       },
     },
