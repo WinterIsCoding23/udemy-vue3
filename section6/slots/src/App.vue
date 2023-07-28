@@ -10,6 +10,7 @@
     <template v-slot:buttons>
       <button type="submit">Submit</button>
     </template>
+    <p>Some intelligent Dummy-text</p>
   </app-Form>
 
   <app-form>

@@ -12,6 +12,7 @@
     <div class="buttons">
       <slot name="buttons">No form to render</slot>
     </div>
+    <slot></slot>
     <!-- <slot>No form to render</slot> -->
   </form>
 </template>
