@@ -12,6 +12,8 @@ export default {
   // [Vue warn]: Extraneous non-emits event listeners (ageChange) were passed to component
   // but could not be automatically inherited because component renders fragment or text root nodes.
   // If the listener is intended to be a component custom event listener only, declare it using the "emits" option.
+
+  // emits-option: is recommended to use to describe what the Component does/what events it emits
   methods: {
     onClickAge() {
       this.$emit("age-change", 3);
