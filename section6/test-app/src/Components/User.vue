@@ -8,7 +8,13 @@
 <script>
 export default {
   name: "User",
-  props: ["age"],
+  // props: ["age"],
+  props: {
+    age: {
+      type: Number,
+      required: true,
+    },
+  },
   emits: ["age-change"], // Declare the custom event - seems to solve the warning-message:
   // [Vue warn]: Extraneous non-emits event listeners (ageChange) were passed to component
   // but could not be automatically inherited because component renders fragment or text root nodes.
