@@ -5,7 +5,8 @@
   <greeting :age="age"></greeting>
   <!-- if written like <user age="age"></user> </user>-> Vue would assume a String has to be passed down -->
   <!-- ":" in front needed to bind the value inside the data-function -->
-  <user :age="age"></user>
+  <!-- "@age-change" = short-hand for "v-on"-directive -->
+  <user :age="age" @age-change="age++"></user>
 </template>
 
 <script>
