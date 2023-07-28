@@ -1,3 +1,7 @@
 <template></template>
 
-<script></script>
+<script>
+export default {
+  name: "App",
+};
+</script>
