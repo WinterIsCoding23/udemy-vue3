@@ -12,7 +12,12 @@ export default {
   props: {
     age: {
       type: Number,
-      required: true,
+      // required: true,
+      // ...when there is a default-value, then "required" is unnecessary
+      // default: 20,
+      validator(value) {
+        return value < 130;
+      },
     },
   },
   emits: ["age-change"], // Declare the custom event - seems to solve the warning-message:

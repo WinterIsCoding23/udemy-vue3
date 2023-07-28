@@ -26,7 +26,10 @@ export default {
   },
   methods: {
     updateAge(num) {
-      this.age += num;
+      this.age + num <= 130
+        ? (this.age += num)
+        : alert("Noone can be this old, don't be ridiculous!");
+      // console.log(this.age);
     },
   },
 };
