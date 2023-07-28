@@ -1,7 +1,7 @@
 <!-- the component can be named "AppForm" or "appForm" or "app-Form" -->
 <template>
-  <app-Form
-    ><div class="help"><p>This is some help-text.</p></div>
+  <app-Form>
+    <div class="help"><p>This is some help-text.</p></div>
     <div class="fields">
       <input type="text" placeholder="email" />
       <input type="text" placeholder="username" />
@@ -12,7 +12,16 @@
     </div>
   </app-Form>
 
-  <app-form></app-form>
+  <app-form>
+    <div class="help"><p>Contact.</p></div>
+    <div class="fields">
+      <input type="text" placeholder="name" />
+      <input type="text" placeholder="message" />
+    </div>
+    <div class="buttons">
+      <button type="submit">Submit</button>
+    </div>
+  </app-form>
 </template>
 
 <script>
