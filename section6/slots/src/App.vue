@@ -1,8 +1,11 @@
 <!-- the component can be named "AppForm" or "appForm" or "app-Form" -->
+<!-- to render the App correctly, the elements in App have to be in the same order as the slots in Form -->
 <template>
   <p>Some intelligent Dummy-text</p>
   <app-Form>
-    <template v-slot:help><p>This is some help-text.</p></template>
+    <template v-slot:help
+      ><p>{{ help }}</p></template
+    >
     <template v-slot:fields>
       <input type="text" placeholder="email" />
       <input type="text" placeholder="username" />
@@ -36,6 +39,11 @@ export default {
   name: "App",
   components: {
     AppForm,
+  },
+  data() {
+    return {
+      help: "This is some help-text.",
+    };
   },
 };
 </script>
