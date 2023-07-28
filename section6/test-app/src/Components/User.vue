@@ -14,7 +14,7 @@ export default {
   // If the listener is intended to be a component custom event listener only, declare it using the "emits" option.
   methods: {
     onClickAge() {
-      this.$emit("age-change");
+      this.$emit("age-change", 3);
     },
   },
 };
