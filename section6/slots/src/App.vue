@@ -1,26 +1,27 @@
 <!-- the component can be named "AppForm" or "appForm" or "app-Form" -->
 <template>
   <app-Form>
-    <div class="help"><p>This is some help-text.</p></div>
-    <div class="fields">
+    <template v-slot:help><p>This is some help-text.</p></template>
+    <template v-slot:fields>
       <input type="text" placeholder="email" />
       <input type="text" placeholder="username" />
       <input type="password" placeholder="password" />
-    </div>
-    <div class="buttons">
+    </template>
+    <template v-slot:buttons>
       <button type="submit">Submit</button>
-    </div>
+    </template>
   </app-Form>
 
   <app-form>
-    <div class="help"><p>Contact.</p></div>
-    <div class="fields">
+    <!-- the form-component can be used multiple times - even with modified content! -->
+    <template v-slot:help><p>Contact:</p></template>
+    <template v-slot:fields>
       <input type="text" placeholder="name" />
       <input type="text" placeholder="message" />
-    </div>
-    <div class="buttons">
+    </template>
+    <template v-slot:buttons>
       <button type="submit">Submit</button>
-    </div>
+    </template>
   </app-form>
 </template>
 
