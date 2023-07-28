@@ -1,8 +1,12 @@
 <template>
-  <button type="button" @click="onClickAge">Update age</button>
+  <button type="button" @click="onClickAge">Update age Event</button>
+  <button type="button" @click="ageChangeFn(3)">
+    Update age Callback (CB)
+  </button>
 
   <p>The user is {{ age }} years old.</p>
   <p>{{ ageDoubled }}</p>
+  <p>UpdateAgeCB: {{ updateAgeCB }}</p>
 </template>
 
 <script>
@@ -21,6 +25,7 @@ export default {
         return value < 130;
       },
     },
+    ageChangeFn: Function,
   },
   emits: ["age-change"], // Declare the custom event - seems to solve the warning-message:
   // [Vue warn]: Extraneous non-emits event listeners (ageChange) were passed to component
