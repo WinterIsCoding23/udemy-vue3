@@ -1,5 +1,6 @@
 <!-- the component can be named "AppForm" or "appForm" or "app-Form" -->
 <template>
+  <p>Some intelligent Dummy-text</p>
   <app-Form>
     <template v-slot:help><p>This is some help-text.</p></template>
     <template v-slot:fields>
@@ -7,6 +8,7 @@
       <input type="text" placeholder="username" />
       <input type="password" placeholder="password" />
     </template>
+    <p>Some intelligent Dummy-text</p>
     <template v-slot:buttons>
       <button type="submit">Submit</button>
     </template>
