@@ -24,5 +24,11 @@ export default {
 
 .fade-enter-active {
   transition: all 0.25s linear;
+  /* "opacity = 1" does not have to be applied bc its default value is 1 */
+}
+
+.fade-leave-to {
+  transition: all 0.25s linear;
+  opacity: 0;
 }
 </style>
