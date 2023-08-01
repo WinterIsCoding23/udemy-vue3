@@ -47,4 +47,30 @@ h2 {
   transition: all 1s linear;
   opacity: 0;
 }
+
+.zoom-enter-active {
+  animation: zoom-in 1s linear forwards;
+}
+
+.zoom-leave-active {
+  animation: zoom-out 1s linear forwards;
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(0, 0);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes zoom-out {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(0, 0);
+  }
+}
 </style>
