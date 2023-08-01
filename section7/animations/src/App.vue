@@ -16,6 +16,8 @@
       <h2 v-if="flag">Hello</h2>
     </transition> -->
 
+  <!-- Chapter 74: -->
+  <!-- There exist also the @enter-cancelled & @leave-cancelled -hooks -->
   <transition
     @before-enter="beforeEnter"
     @enter="enter"
@@ -34,6 +36,25 @@ export default {
     return {
       flag: false,
     };
+  },
+  methods: {
+    beforeEnter(el) {
+      console.log("beforeEnter-event fired");
+    },
+    enter(el, done) {
+      console.log("enter-event fired");
+      done();
+    },
+    beforeEnter(el) {
+      console.log("beforeEnter-event fired");
+    },
+    leave(el, done) {
+      console.log("leave-event fired");
+      done();
+    },
+    afterLeave(el) {
+      console.log("afterLeave-event fired");
+    },
   },
 };
 </script>
