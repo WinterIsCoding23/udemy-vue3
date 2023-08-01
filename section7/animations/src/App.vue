@@ -47,7 +47,7 @@ export default {
       done();
     },
     afterEnter(el) {
-      console.log("beforeEnter-event fired", el);
+      console.log("afterEnter-event fired", el);
     },
     beforeLeave(el) {
       console.log("beforeLeave-event fired", el);
