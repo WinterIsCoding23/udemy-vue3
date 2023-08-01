@@ -21,6 +21,7 @@
   <transition
     @before-enter="beforeEnter"
     @enter="enter"
+    @after-enter="afterEnter"
     @before-leave="beforeLeave"
     @leave="leave"
     @after-leave="afterLeave"
@@ -45,8 +46,11 @@ export default {
       console.log("enter-event fired", el);
       done();
     },
-    beforeEnter(el) {
+    afterEnter(el) {
       console.log("beforeEnter-event fired", el);
+    },
+    beforeLeave(el) {
+      console.log("beforeLeave-event fired", el);
     },
     leave(el, done) {
       console.log("leave-event fired", el);
