@@ -50,10 +50,19 @@ h2 {
 
 .zoom-enter-active {
   animation: zoom-in 1s linear forwards;
+  transition: all 1s linear;
 }
 
 .zoom-leave-active {
   animation: zoom-out 1s linear forwards;
+  transition: all 1s linear;
+}
+.zoom-enter-from {
+  opacity: 0;
+}
+
+.zoom-leave-to {
+  opacity: 0;
 }
 
 @keyframes zoom-in {
