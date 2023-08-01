@@ -25,7 +25,10 @@
     @before-leave="beforeLeave"
     @leave="leave"
     @after-leave="afterLeave"
+    :css="false"
   >
+    <!-- Vue checks first if there are CSS-animations before checking on the JS-animations
+    -> binding the css-attribute like before saves ressources since Vue then doesnt check for (the in this case non-existent) CSS-animations:  -->
     <h2 v-if="flag">Hey!</h2>
   </transition>
 </template>
