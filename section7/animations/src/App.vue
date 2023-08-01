@@ -34,26 +34,26 @@ export default {
   name: "App",
   data() {
     return {
-      flag: false,
+      flag: true,
     };
   },
   methods: {
     beforeEnter(el) {
-      console.log("beforeEnter-event fired");
+      console.log("beforeEnter-event fired", el);
     },
     enter(el, done) {
-      console.log("enter-event fired");
+      console.log("enter-event fired", el);
       done();
     },
     beforeEnter(el) {
-      console.log("beforeEnter-event fired");
+      console.log("beforeEnter-event fired", el);
     },
     leave(el, done) {
-      console.log("leave-event fired");
+      console.log("leave-event fired", el);
       done();
     },
     afterLeave(el) {
-      console.log("afterLeave-event fired");
+      console.log("afterLeave-event fired", el);
     },
   },
 };
