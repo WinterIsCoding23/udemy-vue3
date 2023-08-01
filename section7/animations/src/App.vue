@@ -11,9 +11,10 @@
   <!-- <h2 v-else key="secondary">Another Hello!</h2> -->
   <!-- </transition> -->
 
-  <transition name="zoom" type="animation" appear>
-    <h2 v-if="flag">Hello</h2>
-  </transition>
+  <!-- Chapter 73 -->
+  <!-- <transition name="zoom" type="animation" appear>
+      <h2 v-if="flag">Hello</h2>
+    </transition> -->
 </template>
 
 <script>
