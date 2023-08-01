@@ -15,6 +15,16 @@
   <!-- <transition name="zoom" type="animation" appear>
       <h2 v-if="flag">Hello</h2>
     </transition> -->
+
+  <transition
+    @before-enter="beforeEnter"
+    @enter="enter"
+    @before-leave="beforeLeave"
+    @leave="leave"
+    @after-leave="afterLeave"
+  >
+    <h2 v-if="flag">Hey!</h2>
+  </transition>
 </template>
 
 <script>
