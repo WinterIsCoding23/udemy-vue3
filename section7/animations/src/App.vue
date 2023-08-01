@@ -44,7 +44,16 @@ export default {
     },
     enter(el, done) {
       console.log("enter-event fired", el);
-      done();
+
+      // animate() can include as many objects (= animations) inside the array as we want
+      // ...second object can remain empty when we want the element to animate back to its original size
+      const animation = el.animate([{ tansform: "scale3d(0, 0, 0)" }, {}], {
+        duration: 1000,
+      });
+
+      animation.onFinish = () => {
+        done();
+      };
     },
     afterEnter(el) {
       console.log("afterEnter-event fired", el);
@@ -54,7 +63,13 @@ export default {
     },
     leave(el, done) {
       console.log("leave-event fired", el);
-      done();
+      const animation = el.animate([{}, { tansform: "scale3d(0, 0, 0)" }], {
+        duration: 1000,
+      });
+
+      animation.onFinish = () => {
+        done();
+      };
     },
     afterLeave(el) {
       console.log("afterLeave-event fired", el);
