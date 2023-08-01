@@ -52,7 +52,7 @@ h2 {
   animation: zoom-in 1s linear forwards;
   /* transition: all 1s linear; */
   /* Vue uses the duration with the longest time --> in this case, animation wont happen, element just appears*/
-  /* --> add type="(HERE put the animation OR transition whose duration Vue should use )" PLUS appear as an attribute
+  /* --> add type="(HERE put the animation OR transition whose duration Vue should use )" PLUS appear as an attribute*/
   transition: all 2s linear;
 }
 
