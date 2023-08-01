@@ -11,7 +11,7 @@
   <!-- <h2 v-else key="secondary">Another Hello!</h2> -->
   <!-- </transition> -->
 
-  <transition name="zoom">
+  <transition name="zoom" type="animation" appear>
     <h2 v-if="flag">Hello</h2>
   </transition>
 </template>
@@ -50,12 +50,16 @@ h2 {
 
 .zoom-enter-active {
   animation: zoom-in 1s linear forwards;
-  transition: all 1s linear;
+  /* transition: all 1s linear; */
+  /* Vue uses the duration with the longest time --> in this case, animation wont happen, element just appears*/
+  /* --> add type="(HERE put the animation OR transition whose duration Vue should use )" PLUS appear as an attribute
+  transition: all 2s linear;
 }
 
 .zoom-leave-active {
   animation: zoom-out 1s linear forwards;
-  transition: all 1s linear;
+  /* transition: all 1s linear; */
+  transition: all 2s linear;
 }
 .zoom-enter-from {
   opacity: 0;
