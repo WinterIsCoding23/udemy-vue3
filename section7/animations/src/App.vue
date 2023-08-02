@@ -25,10 +25,11 @@
     @before-leave="beforeLeave"
     @leave="leave"
     @after-leave="afterLeave"
-    :css="false"
+    :css="true"
+    name="fade"
   >
     <!-- Vue checks first if there are CSS-animations before checking on the JS-animations
-    -> binding the css-attribute like before saves ressources since Vue then doesnt check for (the in this case non-existent) CSS-animations:  -->
+    -> binding the css-attribute like this to the transition-component: ":css="false" saves ressources since Vue then doesnt check for (the in this case non-existent) CSS-animations:  -->
     <h2 v-if="flag">Hey!</h2>
   </transition>
 </template>
@@ -45,18 +46,18 @@ export default {
     beforeEnter(el) {
       console.log("beforeEnter-event fired", el);
     },
-    enter(el, done) {
+    enter(el) {
       console.log("enter-event fired", el);
 
       // animate() can include as many objects (= animations) inside the array as we want
       // ...second object can remain empty when we want the element to animate back to its original size
-      const animation = el.animate([{ transform: "scale3d(0, 0, 0)" }, {}], {
-        duration: 1000,
-      });
+      // const animation = el.animate([{ transform: "scale3d(0, 0, 0)" }, {}], {
+      //   duration: 1000,
+      // });
 
-      animation.onfinish = () => {
-        done();
-      };
+      // animation.onfinish = () => {
+      //   done();
+      // };
     },
     afterEnter(el) {
       console.log("afterEnter-event fired", el);
@@ -64,15 +65,15 @@ export default {
     beforeLeave(el) {
       console.log("beforeLeave-event fired", el);
     },
-    leave(el, done) {
+    leave(el) {
       console.log("leave-event fired", el);
-      const animation = el.animate([{}, { transform: "scale3d(0, 0, 0)" }], {
-        duration: 1000,
-      });
+      // const animation = el.animate([{}, { transform: "scale3d(0, 0, 0)" }], {
+      //   duration: 1000,
+      // });
 
-      animation.onfinish = () => {
-        done();
-      };
+      // animation.onfinish = () => {
+      //   done();
+      // };
     },
     afterLeave(el) {
       console.log("afterLeave-event fired", el);
@@ -141,3 +142,52 @@ h2 {
   }
 }
 </style>
+
+<!-- Code from chapter 75: Javascript Zoom Animation -->
+<!-- <script>
+export default {
+  name: "App",
+  data() {
+    return {
+      flag: true,
+    };
+  },
+  methods: {
+    beforeEnter(el) {
+      console.log("beforeEnter-event fired", el);
+    },
+    enter(el, done) {
+      console.log("enter-event fired", el);
+
+      // animate() can include as many objects (= animations) inside the array as we want
+      // ...second object can remain empty when we want the element to animate back to its original size
+      const animation = el.animate([{ transform: "scale3d(0, 0, 0)" }, {}], {
+        duration: 1000,
+      });
+
+      animation.onfinish = () => {
+        done();
+      };
+    },
+    afterEnter(el) {
+      console.log("afterEnter-event fired", el);
+    },
+    beforeLeave(el) {
+      console.log("beforeLeave-event fired", el);
+    },
+    leave(el, done) {
+      console.log("leave-event fired", el);
+      const animation = el.animate([{}, { transform: "scale3d(0, 0, 0)" }], {
+        duration: 1000,
+      });
+
+      animation.onfinish = () => {
+        done();
+      };
+    },
+    afterLeave(el) {
+      console.log("afterLeave-event fired", el);
+    },
+  },
+};
+</script> -->
