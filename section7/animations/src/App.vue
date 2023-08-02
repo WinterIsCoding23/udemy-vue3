@@ -36,15 +36,17 @@
   <!-- Chapter 77 Animating a List: -->
   <button @click="addItem">Add</button>
 
-  <ul>
-    <li
-      v-for="(number, index) in numbers"
-      :key="number"
-      @click="removeItem(index)"
-    >
-      {{ number }}
-    </li>
-  </ul>
+  <div>
+    <ul>
+      <li
+        v-for="(number, index) in numbers"
+        :key="number"
+        @click="removeItem(index)"
+      >
+        {{ number }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -108,7 +110,11 @@ export default {
 </script>
 
 <style>
+div {
+  width: max-content;
+}
 li {
+  list-style: none;
   font-size: 22px;
   cursor: pointer;
 }
