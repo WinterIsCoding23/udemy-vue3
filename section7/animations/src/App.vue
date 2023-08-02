@@ -32,6 +32,13 @@
     -> binding the css-attribute like this to the transition-component: ":css="false" saves ressources since Vue then doesnt check for (the in this case non-existent) CSS-animations:  -->
     <h2 v-if="flag">Hey!</h2>
   </transition>
+
+  <!-- Chapter 77 Animating a List: -->
+  <button @click="addItem">Add</button>
+
+  <ul>
+    <li v-for="number in numbers" :key="number">{{ number }}</li>
+  </ul>
 </template>
 
 <script>
@@ -40,9 +47,18 @@ export default {
   data() {
     return {
       flag: true,
+      numbers: [1, 2, 3, 4, 5],
     };
   },
   methods: {
+    // addItem-function inserts a random number "num" between 1 and 100
+    // & inserts it at the position of a random index-number from the numbers-array
+    // the splice-method makes sure that the insertion is done at index "index", 0 elements removed and "num" is inserted
+    addItem() {
+      const num = Math.floor(Math.random() * 100 + 1);
+      const index = Math.floor(Math.random() * this.numbers.length);
+      this.numbers.splice(index, 0, num);
+    },
     beforeEnter(el) {
       console.log("beforeEnter-event fired", el);
     },
@@ -83,6 +99,11 @@ export default {
 </script>
 
 <style>
+li {
+  font-size: 22px;
+  cursor: pointer;
+}
+
 h2 {
   width: 400px;
   margin: 20px;
