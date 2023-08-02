@@ -143,6 +143,11 @@ h2 {
   transition: all 1s linear;
 }
 
+/*chapter 78: this class prevents the moved li-items to "jump" to take over the spot of the removed item  */
+.fade-leave-active {
+  position: absolute;
+}
+
 .zoom-enter-active {
   animation: zoom-in 1s linear forwards;
   /* transition: all 1s linear; */
