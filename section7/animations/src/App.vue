@@ -37,7 +37,13 @@
   <button @click="addItem">Add</button>
 
   <ul>
-    <li v-for="number in numbers" :key="number">{{ number }}</li>
+    <li
+      v-for="(number, index) in numbers"
+      :key="number"
+      @click="removeItem(index)"
+    >
+      {{ number }}
+    </li>
   </ul>
 </template>
 
@@ -58,6 +64,9 @@ export default {
       const num = Math.floor(Math.random() * 100 + 1);
       const index = Math.floor(Math.random() * this.numbers.length);
       this.numbers.splice(index, 0, num);
+    },
+    removeItem(index) {
+      this.numbers.splice(index, 1);
     },
     beforeEnter(el) {
       console.log("beforeEnter-event fired", el);
