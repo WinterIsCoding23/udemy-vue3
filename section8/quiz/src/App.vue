@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Questions from "../src/components/Questions.vue";
-import Result from "../src/components/Result.vue";
+import Questions from "./components/Questions.vue";
+import Result from "./components/Result.vue";
 
 export default {
   name: "App",
