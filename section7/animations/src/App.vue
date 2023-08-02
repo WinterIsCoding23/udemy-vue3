@@ -44,6 +44,8 @@
       leave-from-class=""
       leave-to-class="" 
     -->
+    <!-- all classes from the animate-library:-->
+    <!-- https://animate.style/ -->
     <transition-group
       name="fade"
       enter-active-class="animate__animated animate__flipInX"
@@ -121,6 +123,13 @@ export default {
 </script>
 
 <style>
+.animate__animated {
+  animation-duration: 1.5s;
+}
+.animate__flipOutX {
+  position: absolute;
+}
+
 ul {
   width: max-content;
 }
