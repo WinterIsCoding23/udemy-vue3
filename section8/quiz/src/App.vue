@@ -3,6 +3,7 @@
     <questions
       v-if="questionsAnswered < questions.length"
       :questions="questions"
+      :questionsAnswered="questionsAnswered"
     />
     <result v-else />
 
