@@ -106,6 +106,8 @@ export default {
       if (is_correct) {
         this.totalCorrect++;
       }
+
+      this.questionsAnswered++;
     },
   },
 };
