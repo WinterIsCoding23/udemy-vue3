@@ -101,6 +101,13 @@ export default {
       ],
     };
   },
+  method: {
+    questionAnswered(is_correct) {
+      if (is_correct) {
+        this.totalCorrect++;
+      }
+    },
+  },
 };
 </script>
 
