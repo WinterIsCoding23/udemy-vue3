@@ -18,7 +18,6 @@
           :key="answer.text"
           @click.prevent="selectAnswer(answer.is_correct)"
         >
-          >
           {{ answer.text }}
         </div>
         <!-- <div class="answer">Sample Answer 2</div>
