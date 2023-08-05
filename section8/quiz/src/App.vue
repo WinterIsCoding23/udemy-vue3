@@ -4,6 +4,7 @@
       v-if="questionsAnswered < questions.length"
       :questions="questions"
       :questionsAnswered="questionsAnswered"
+      @question-answered="questionAnswered"
     />
     <result v-else />
 
