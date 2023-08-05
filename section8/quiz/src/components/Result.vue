@@ -5,4 +5,8 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  props: ["results", "totalCorrect"],
+};
+</script>
