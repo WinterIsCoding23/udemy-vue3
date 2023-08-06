@@ -8,7 +8,12 @@
     />
     <result v-else :results="results" :totalCorrect="totalCorrect" />
 
-    <button type="button" class="reset-btn" @click.prevent="reset">
+    <button
+      type="button"
+      class="reset-btn"
+      @click.prevent="reset"
+      v-if="questionsAnswered === questions.length"
+    >
       Reset
     </button>
   </div>
