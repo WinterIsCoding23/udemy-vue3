@@ -1,7 +1,7 @@
 <template>
   <div class="result">
-    <div class="title">{{ result[resultIndex].title }}</div>
-    <div class="desc">{{ result[resultIndex].desc }}</div>
+    <div class="title">{{ results[resultIndex].title }}</div>
+    <div class="desc">{{ results[resultIndex].desc }}</div>
   </div>
 </template>
 
