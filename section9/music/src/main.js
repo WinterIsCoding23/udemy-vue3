@@ -9,6 +9,7 @@ import '../src/assets/main.css'
 
 const app = createApp(App)
 
+// all plugins - like Pinia - must be registered (via .use-method) before mounting the app
 app.use(createPinia())
 app.use(router)
 
