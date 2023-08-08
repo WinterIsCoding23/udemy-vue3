@@ -17,5 +17,10 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
+  },
+  // environment variable: node: true --> eslint learns that (part of) our app runs inside node
+  //...default is that app runs in browser --> causes eslint to throw error for module.exports in tailwind.config
+  env: {
+    node: true
   }
 }
