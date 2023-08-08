@@ -263,14 +263,16 @@
       <div class="player-duration">03:06</div>
     </div>
   </div>
+  <AppAuth />
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue'
+import AppAuth from './components/AppAuth.vue'
 
 export default {
   name: 'App',
-  components: { AppHeader },
+  components: { AppHeader, AppAuth },
 
   data() {
     return {}
