@@ -25,6 +25,8 @@
 
 <script>
 import { mapStores } from 'pinia'
+// instead of useModalStore(= storing the whole store) we could also use "mapState" or "mapWritableState"
+// ...and could use this.isOpen instead of this.modalStore.isOpen
 import useModalStore from '../stores/modal'
 
 export default {
