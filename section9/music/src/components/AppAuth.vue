@@ -151,7 +151,9 @@ export default {
   name: 'AppAuth',
   computed: {
     ...mapState(useModalStore, ['hiddenClass']),
-    ...mapWritableState(useModalStore, ['isOpen'])
+    ...mapWritableState(useModalStore, {
+      modalVisibility: 'isOpen'
+    })
   }
 }
 </script>
