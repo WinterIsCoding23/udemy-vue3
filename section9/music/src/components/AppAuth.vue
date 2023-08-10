@@ -142,7 +142,13 @@
 </template>
 
 <script>
+import { mapState, mapStores } from 'pinia'
+import useModalStore from '../stores/modal'
+
 export default {
-  name: 'AppAuth'
+  name: 'AppAuth',
+  computed: {
+    ...mapState(useModalStore, ['hiddenClass'])
+  }
 }
 </script>
