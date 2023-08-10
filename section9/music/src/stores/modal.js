@@ -1,3 +1,5 @@
+// everything in here is available for all components
+
 import { defineStore } from 'pinia'
 
 export default defineStore('modal', {
