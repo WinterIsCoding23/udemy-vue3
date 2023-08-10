@@ -21,6 +21,8 @@
             <p class="text-2xl font-bold">Your Account</p>
             <!-- Modal Close Button -->
             <div class="modal-close cursor-pointer z-50" @click="isOpen = false">
+              <!-- fas & fa-times are classes from FontAwesome: https://fontawesome.com/v4/icon/times -->
+              <!--...and have to applied to an <i>-Tag -->
               <i class="fas fa-times"></i>
             </div>
           </div>
