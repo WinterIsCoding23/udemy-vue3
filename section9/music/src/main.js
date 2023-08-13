@@ -14,5 +14,6 @@ const app = createApp(App)
 // all plugins - like Pinia - must be registered (via .use-method) before mounting the app
 app.use(createPinia())
 app.use(router)
+app.use(VeeValidatePlugin)
 
 app.mount('#app')
