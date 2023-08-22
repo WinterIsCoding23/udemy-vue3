@@ -83,7 +83,8 @@
             </button>
           </form>
           <!-- Registration Form -->
-          <vee-form v-show="tab === 'register'">
+          <!-- Quick way to bind rules: :rules="'<name of rule>'", not used here because clutters the div-->
+          <vee-form v-show="tab === 'register'" :validation-schema="schema">
             <!-- Name -->
             <div class="mb-3">
               <label class="inline-block mb-2">Name</label>
@@ -166,7 +167,16 @@ export default {
   name: 'AppAuth',
   data() {
     return {
-      tab: 'login'
+      tab: 'login',
+      schema: {
+        name: 'required',
+        email: '',
+        age: '',
+        password: '',
+        confirm_password: '',
+        country: '',
+        tos: ''
+      }
     }
   },
   computed: {
