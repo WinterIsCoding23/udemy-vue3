@@ -1,6 +1,6 @@
 // defineRule: allows to register a rule globally = available to every validation form
 import { Form as VeeForm, Field as VeeField, defineRule, ErrorMessage } from 'vee-validate'
-import { required } from '@vee-validate/rules'
+import { required, min, max, alpha_spaces as alphaSpaces } from '@vee-validate/rules'
 
 // install(){} can have a second argument "options"
 // ...can be used in the importing component as an object
@@ -12,6 +12,9 @@ export default {
     app.component('ErrorMessage', ErrorMessage)
 
     defineRule('required', required)
+    defineRule('min', min)
+    defineRule('max', max)
+    defineRule('alpha_Spaces', alphaSpaces)
   }
 }
 
