@@ -84,6 +84,7 @@
           </form>
           <!-- Registration Form -->
           <!-- Quick way to bind rules: :rules="'<name of rule>'", not used here because clutters the div-->
+          <!-- Object-syntax for bindung rules:  :rule="{ required: true }", advantage: allows rules to be saved as data-property-->
           <vee-form v-show="tab === 'register'" :validation-schema="schema">
             <!-- Name -->
             <div class="mb-3">
