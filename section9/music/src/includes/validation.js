@@ -14,7 +14,7 @@ export default {
     defineRule('required', required)
     defineRule('min', min)
     defineRule('max', max)
-    defineRule('alpha_Spaces', alphaSpaces)
+    defineRule('alpha_spaces', alphaSpaces)
   }
 }
 
