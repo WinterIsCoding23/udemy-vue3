@@ -1,4 +1,6 @@
-import { Form as VeeForm, Field as VeeField } from 'vee-validate'
+// defineRule: allows to register a rule globally = available to every validation form
+import { Form as VeeForm, Field as VeeField, defineRule } from 'vee-validate'
+import { required } from '@vee-validate/rules'
 
 // install(){} can have a second argument "options"
 // ...can be used in the importing component as an object
@@ -7,5 +9,9 @@ export default {
   install(app) {
     app.component('VeeForm', VeeForm)
     app.component('VeeField', VeeField)
+
+    defineRule('required', required)
   }
 }
+
+// defineRule("name of rule", function that performs the validation)
