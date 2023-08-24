@@ -8,7 +8,8 @@ import {
   email,
   numeric,
   min_value as minVal,
-  max_value as maxVal
+  max_value as maxVal,
+  confirmed
 } from '@vee-validate/rules'
 
 // install(){} can have a second argument "options"
@@ -28,6 +29,7 @@ export default {
     defineRule('numeric', numeric)
     defineRule('min_value', minVal)
     defineRule('max_value', maxVal)
+    defineRule('confirmed', confirmed)
   }
 }
 
