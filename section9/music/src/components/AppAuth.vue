@@ -85,7 +85,7 @@
           <!-- Registration Form -->
           <!-- Quick way to bind rules: :rules="'<name of rule>'", not used here because clutters the div-->
           <!-- Object-syntax for bindung rules:  :rule="{ required: true }", advantage: allows rules to be saved as data-property-->
-          <vee-form v-show="tab === 'register'" :validation-schema="schema">
+          <vee-form v-show="tab === 'register'" :validation-schema="schema" @submit="register">
             <!-- Name -->
             <div class="mb-3">
               <label class="inline-block mb-2">Name</label>
@@ -204,6 +204,11 @@ export default {
     ...mapWritableState(useModalStore, {
       modalVisibility: 'isOpen'
     })
+  },
+  methods: {
+    register(values) {
+      console.log(values)
+    }
   }
 }
 </script>
