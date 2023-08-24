@@ -9,7 +9,8 @@ import {
   numeric,
   min_value as minVal,
   max_value as maxVal,
-  confirmed
+  confirmed,
+  not_one_of as excluded
 } from '@vee-validate/rules'
 
 // install(){} can have a second argument "options"
@@ -30,6 +31,7 @@ export default {
     defineRule('min_value', minVal)
     defineRule('max_value', maxVal)
     defineRule('confirmed', confirmed)
+    defineRule('excluded', excluded)
   }
 }
 
