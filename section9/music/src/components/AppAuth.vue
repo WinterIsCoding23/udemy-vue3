@@ -121,8 +121,8 @@
             <!-- Password -->
             <div class="mb-3">
               <label class="inline-block mb-2">Password</label>
-              <vee-field name="password" :bails="false"/>
-                <input class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded" type="password" placeholder="Password"/>
+              <vee-field name="password" :bails="false" v-slot="{ field }"/>
+                <input class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded" type="password" placeholder="Password" v-bind="field"/>
             </vee-field >
               <ErrorMessage class="text-red-600 block" name="password" />
             </div>
