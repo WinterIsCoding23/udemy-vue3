@@ -126,8 +126,7 @@
                 <div class="text-red-600" v-for="error in errors" :key="error">
                   {{ error }}
                 </div>
-            </vee-field >
-              <ErrorMessage class="text-red-600 block" name="password" />
+            </vee-field >              
             </div>
             <!-- Confirm Password -->
             <div class="mb-3">
