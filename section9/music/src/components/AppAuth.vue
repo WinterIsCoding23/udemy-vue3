@@ -85,7 +85,12 @@
           <!-- Registration Form -->
           <!-- Quick way to bind rules: :rules="'<name of rule>'", not used here because clutters the div-->
           <!-- Object-syntax for bindung rules:  :rule="{ required: true }", advantage: allows rules to be saved as data-property-->
-          <vee-form v-show="tab === 'register'" :validation-schema="schema" @submit="register">
+          <vee-form
+            v-show="tab === 'register'"
+            :validation-schema="schema"
+            @submit="register"
+            :initial-values="userData"
+          >
             <!-- Name -->
             <div class="mb-3">
               <label class="inline-block mb-2">Name</label>
@@ -200,6 +205,9 @@ export default {
         confirm_password: 'confirmed:@password',
         country: 'required|excluded:Antarctica,Germany',
         tos: 'required'
+      },
+      userData: {
+        country: 'USA'
       }
     }
   },
