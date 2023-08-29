@@ -202,9 +202,12 @@ export default {
         email: 'required|min:3|max: 100|email',
         age: 'required|min:2|min_value:18|max_value:120|numeric',
         password: 'required|min:9|max:100|excluded:password',
-        confirm_password: 'confirmed:@password',
-        country: 'required|excluded:Antarctica,Germany',
-        tos: 'required'
+        // confirm_password: 'confirmed:@password',
+        confirm_password: 'passords_mismatch:@password',
+        // country: 'required|excluded:Antarctica,Germany',
+        country: 'required|country_excluded:Antarctica,Germany',
+        // tos: 'required'
+        tos: 'tos'
       },
       userData: {
         country: 'USA'
