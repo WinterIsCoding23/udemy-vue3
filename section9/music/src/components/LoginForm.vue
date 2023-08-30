@@ -41,9 +41,13 @@ export default {
         email: 'required|email',
         password: 'required|min:9|max:100|excluded:password,123456789'
       },
+      // disable button while data is bein submitted (prevents too many submit-events):
       login_in_submission: false,
+      // toggle alert's visibility:
       login_show_alert: false,
+      // change color of the alert:
       login_alert_variant: 'bg-blue-500',
+      // message displayed inside the alert:
       login_alert_msg: 'Please wait - your account is bein created.'
     }
   },
