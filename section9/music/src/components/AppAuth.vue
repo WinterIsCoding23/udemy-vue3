@@ -54,6 +54,8 @@
               >
             </li>
           </ul>
+          <app-login-form v-if="tab === 'login'" />
+          <app-register-form v-else />
         </div>
       </div>
     </div>
@@ -63,9 +65,15 @@
 <script>
 import { mapState, mapWritableState } from 'pinia'
 import useModalStore from '../stores/modal'
+import AppLoginForm from '@/components/LoginForm.vue'
+import AppRegisterForm from '@/components/RegisterForm.vue'
 
 export default {
   name: 'AppAuth',
+  components: {
+    LoginForm,
+    RegisterForm
+  },
   data() {
     return {
       tab: 'login'
