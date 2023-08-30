@@ -9,12 +9,7 @@
   >
     {{ reg_alert_msg }}
   </div>
-  <vee-form
-    v-show="tab === 'register'"
-    :validation-schema="schema"
-    @submit="register"
-    :initial-values="userData"
-  >
+  <vee-form :validation-schema="schema" @submit="register" :initial-values="userData">
     <!-- Name -->
     <div class="mb-3">
       <label class="inline-block mb-2">Name</label>
