@@ -40,7 +40,11 @@ export default {
       loginSchema: {
         email: 'required|email',
         password: 'required|min:9|max:100|excluded:password,123456789'
-      }
+      },
+      login_in_submission: false,
+      login_show_alert: false,
+      login_alert_variant: 'bg-blue-500',
+      login_alert_msg: 'Please wait - your account is bein created.'
     }
   },
   methods: {
