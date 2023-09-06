@@ -1,10 +1,13 @@
 <template>
-  <div></div>
+  <div>
+    <!-- by binding a property to the slot-component it becomes available in the parent-component (here: App)-->
+    <slot :user="user" :favorites="favorites"></slot>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   data() {
     return {
       user: {
@@ -14,5 +17,5 @@ export default {
       favorites: ["Pizza", "Marbles", "Birds"],
     };
   },
-}
+};
 </script>
