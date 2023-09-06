@@ -8,6 +8,7 @@ import '../src/assets/base.css'
 import '../src/assets/main.css'
 
 import VeeValidatePlugin from './includes/validation'
+import './includes/firebase'
 
 const app = createApp(App)
 
