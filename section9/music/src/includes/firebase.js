@@ -15,6 +15,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 const auth = firebase.auth()
 const db = firebase.firestore()
+// a collection with the name "users" does not have to exist yet for Firebase to store data in it
 const usersCollection = db.collection('users')
 
 export { auth, db, usersCollection }
