@@ -156,18 +156,20 @@ export default {
         return
       }
 
-      try{
-      // the add-function returns a promise --> await
-      await usersCollection.add({
-        name: values.name,
-        email: values.email,
-        age: values.age,
-        country: values.country
-      })
-    } catch (error) {        this.reg_in_submission = false
+      try {
+        // the add-function returns a promise --> await
+        await usersCollection.add({
+          name: values.name,
+          email: values.email,
+          age: values.age,
+          country: values.country
+        })
+      } catch (error) {
+        this.reg_in_submission = false
         this.reg_alert_variant = 'bg-red-500'
         this.reg_alert_msg = 'An unexpected error occurred. Please try again later.'
-        return}
+        return
+      }
 
       this.reg_alert_variant = 'bg-green-500'
       this.reg_alert_msg = 'Success! Your account has been created.'
