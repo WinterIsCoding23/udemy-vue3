@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import { auth } from '../includes/firebase'
+import { auth, db } from '../includes/firebase'
 
 export default {
   name: 'RegisterForm',
