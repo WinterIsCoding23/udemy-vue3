@@ -146,7 +146,7 @@ export default {
       try {
         // https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth#createuserwithemailandpassword
         // --> returns a promise --> async-await
-        // if request was successful user-credentials will be returned
+        // if request was successful user-credentials - ONLY E-Mail and Password - will be returned
         // ... we save them in the const to keep user logged in
         userCred = await firebase
           .auth()
