@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import firebase from '../includes/firebase'
+import { auth } from '../includes/firebase'
 
 export default {
   name: 'RegisterForm',
@@ -148,9 +148,7 @@ export default {
         // --> returns a promise --> async-await
         // if request was successful user-credentials - ONLY E-Mail and Password - will be returned
         // ... we save them in the const to keep user logged in
-        userCred = await firebase
-          .auth()
-          .createUserWithEmailAndPassword(values.email, values.password)
+        userCred = await auth.createUserWithEmailAndPassword(values.email, values.password)
       } catch (error) {
         this.reg_in_submission = false
         this.reg_alert_variant = 'bg-red-500'
