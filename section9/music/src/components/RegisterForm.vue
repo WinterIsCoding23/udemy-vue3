@@ -107,6 +107,7 @@
 <script>
 // import { mapWritableState } from 'pinia' --> commented out in section 134 (refactoring) bc State not manipulated from within the
 // ...component anymore
+// pinia's mapping-functions are available to all components
 import { mapActions } from 'pinia'
 import useUserStore from '../stores/user'
 
