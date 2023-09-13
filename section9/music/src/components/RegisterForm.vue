@@ -106,6 +106,8 @@
 
 <script>
 import { auth, usersCollection } from '../includes/firebase'
+import { mapWritableState } from 'pinia'
+import useUserStore from '../stores/user'
 
 export default {
   name: 'RegisterForm',
