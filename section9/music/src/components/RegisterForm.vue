@@ -105,7 +105,9 @@
 </template>
 
 <script>
-import { mapWritableState } from 'pinia'
+// import { mapWritableState } from 'pinia' --> commented out in section 134 (refactoring) bc State not manipulated from within the
+// ...component anymore
+import { mapActions } from 'pinia'
 import useUserStore from '../stores/user'
 
 export default {
@@ -135,10 +137,13 @@ export default {
       reg_alert_msg: 'Please wait - your account is bein created.'
     }
   },
-  computed: {
-    ...mapWritableState(useUserStore, ['userLoggedIn'])
-  },
+  // computed: {
+  // ...mapWritableState(useUserStore, ['userLoggedIn']) --> see comment above
+  // },
   methods: {
+    ...mapActions(useUserStore, {
+      createUser: 'register'
+    }),
     async register(values) {
       // console.log(values)
       this.reg_show_alert = true
@@ -146,7 +151,9 @@ export default {
       this.reg_alert_variant = 'bg-blue-500'
       this.reg_alert_msg = 'Please wait! Your account is being created.'
 
-      let userCred = null
+      // Initialization of userCred needed in first step to make it accessible outside of the createUserWithEmailAndPassword-function
+      // ...during refactoring in section 134 removed bc not used in RegisterForm-component anymore
+      // let userCred = null
       try {
         // https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth#createuserwithemailandpassword
         // --> returns a promise --> async-await
@@ -161,7 +168,7 @@ export default {
 
       this.reg_alert_variant = 'bg-green-500'
       this.reg_alert_msg = 'Success! Your account has been created.'
-      console.log(userCred)
+      // console.log(userCred)
     }
   }
 }
