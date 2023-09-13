@@ -6,7 +6,7 @@ export default defineStore('user', {
     userLoggedIn: false
   }),
   actions: {
-    async register() {
+    async register(values) {
       await auth.createUserWithEmailAndPassword(values.email, values.password)
 
       // the add-function returns a promise --> await
