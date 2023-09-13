@@ -159,6 +159,7 @@ export default {
         // --> returns a promise --> async-await
         // if request was successful user-credentials - ONLY E-Mail and Password - will be returned
         // ... we save them in the const to keep user logged in
+        await this.createUser(values)
       } catch (error) {
         this.reg_in_submission = false
         this.reg_alert_variant = 'bg-red-500'
