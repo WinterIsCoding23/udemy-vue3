@@ -105,7 +105,6 @@
 </template>
 
 <script>
-import { auth, usersCollection } from '../includes/firebase'
 import { mapWritableState } from 'pinia'
 import useUserStore from '../stores/user'
 
@@ -153,30 +152,12 @@ export default {
         // --> returns a promise --> async-await
         // if request was successful user-credentials - ONLY E-Mail and Password - will be returned
         // ... we save them in the const to keep user logged in
-        userCred = await auth.createUserWithEmailAndPassword(values.email, values.password)
       } catch (error) {
         this.reg_in_submission = false
         this.reg_alert_variant = 'bg-red-500'
         this.reg_alert_msg = 'An unexpected error occurred. Please try again later.'
         return
       }
-
-      try {
-        // the add-function returns a promise --> await
-        await usersCollection.add({
-          name: values.name,
-          email: values.email,
-          age: values.age,
-          country: values.country
-        })
-      } catch (error) {
-        this.reg_in_submission = false
-        this.reg_alert_variant = 'bg-red-500'
-        this.reg_alert_msg = 'An unexpected error occurred. Please try again later.'
-        return
-      }
-
-      this.userLoggedIn = true
 
       this.reg_alert_variant = 'bg-green-500'
       this.reg_alert_msg = 'Success! Your account has been created.'
