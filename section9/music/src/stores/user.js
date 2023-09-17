@@ -7,15 +7,30 @@ export default defineStore('user', {
   }),
   actions: {
     async register(values) {
-      await auth.createUserWithEmailAndPassword(values.email, values.password)
+      const userCred = await auth.createUserWithEmailAndPassword(values.email, values.password)
 
+      // 1st solution (with automatically generated uid by Firebase and the add-function):
       // the add-function returns a promise --> await
-      await usersCollection.add({
+      // await usersCollection.add({
+      //   name: values.name,
+      //   email: values.email,
+      //   age: values.age,
+      //   country: values.country
+      // })
+
+      // 2nd solution (with the generated uid as authentication-method - and the set()-function)
+      await usersCollection.doc(userCred.user.uid).set({
         name: values.name,
         email: values.email,
         age: values.age,
         country: values.country
       })
+
+      // every registered user gets a profile; here, a displayName and a profilePicture can be stored
+      await userCred.user.updateProfile({
+        displayName: values.name
+      })
+
       this.userLoggedIn = true
     }
   }
