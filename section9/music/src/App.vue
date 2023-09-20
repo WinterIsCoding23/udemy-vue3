@@ -278,6 +278,11 @@ export default {
 
   computed: {
     ...mapWritableState(useUserStore, ['userLoggedIn'])
+  },
+  created() {
+    if (AppAuth.currentUser) {
+      this.userLoggedIn = true
+    }
   }
 }
 </script>
