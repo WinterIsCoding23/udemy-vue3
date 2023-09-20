@@ -105,6 +105,12 @@
 </template>
 
 <script>
+// import { mapWritableState } from 'pinia' --> commented out in section 134 (refactoring) bc State not manipulated from within the
+// ...component anymore
+// pinia's mapping-functions are available to all components
+import { mapActions } from 'pinia'
+import useUserStore from '../stores/user'
+
 export default {
   name: 'RegisterForm',
   data() {
@@ -132,17 +138,39 @@ export default {
       reg_alert_msg: 'Please wait - your account is bein created.'
     }
   },
+  // computed: {
+  // ...mapWritableState(useUserStore, ['userLoggedIn']) --> see comment above
+  // },
   methods: {
-    register(values) {
+    ...mapActions(useUserStore, {
+      createUser: 'register'
+    }),
+    async register(values) {
       // console.log(values)
       this.reg_show_alert = true
       this.reg_in_submission = true
       this.reg_alert_variant = 'bg-blue-500'
       this.reg_alert_msg = 'Please wait! Your account is being created.'
 
+      // Initialization of userCred needed in first step to make it accessible outside of the createUserWithEmailAndPassword-function
+      // ...during refactoring in section 134 removed bc not used in RegisterForm-component anymore
+      // let userCred = null
+      try {
+        // https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth#createuserwithemailandpassword
+        // --> returns a promise --> async-await
+        // if request was successful user-credentials - ONLY E-Mail and Password - will be returned
+        // ... we save them in the const to keep user logged in
+        await this.createUser(values)
+      } catch (error) {
+        this.reg_in_submission = false
+        this.reg_alert_variant = 'bg-red-500'
+        this.reg_alert_msg = 'An unexpected error occurred. Please try again later.'
+        return
+      }
+
       this.reg_alert_variant = 'bg-green-500'
       this.reg_alert_msg = 'Success! Your account has been created.'
-      console.log(values)
+      // console.log(userCred)
     }
   }
 }
